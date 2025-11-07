@@ -37,6 +37,8 @@ deeconsole
 - `--cwd <dir>` – Base directory for glob resolution (defaults to the current working directory).
 - `--verbose` – Emit a line for every file that changes, showing the number of statements handled.
 
+Provide multiple patterns by repeating the flag or supplying several values, e.g. `deeconsole --pattern "src/**/*.ts" "tests/**/*.ts"`.
+
 Display the full help with:
 
 ```bash
@@ -70,6 +72,8 @@ deeconsole \
   --pattern "tests/**/*.{ts,tsx}" \
   --ignore "**/__snapshots__/**"
 ```
+
+For a ready-made Playwright example, run the CLI against `samples/playwright-sample.spec.ts`.
 
 ## Behavior
 

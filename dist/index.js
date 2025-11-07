@@ -53,8 +53,8 @@ async function main() {
         .option('-c, --comment', 'Comment out console statements instead of deleting them', false)
         .option('-b, --backup', 'Create a .bak file before overwriting each changed file', false)
         .option('--dry-run', 'Preview files and statements without writing changes', false)
-        .option('-p, --pattern <glob...>', 'Glob pattern(s) of files to process', DEFAULT_PATTERNS)
-        .option('-i, --ignore <glob...>', 'Glob pattern(s) to ignore', DEFAULT_IGNORES)
+        .option('-p, --pattern <glob...>', 'Glob pattern(s) of files to process')
+        .option('-i, --ignore <glob...>', 'Glob pattern(s) to ignore')
         .option('--cwd <dir>', 'Working directory for glob resolution', process.cwd())
         .option('--verbose', 'Log every change that is applied', false);
     const parsed = await program.parseAsync(process.argv);
@@ -262,12 +262,15 @@ function normalizeList(value, fallback) {
     if (!value) {
         return fallback;
     }
-    const items = Array.isArray(value) ? value : value.split(',');
-    const expanded = items
-        .flatMap((entry) => entry.split(','))
-        .map((item) => item.trim())
-        .filter(Boolean);
-    return expanded.length > 0 ? expanded : fallback;
+    if (Array.isArray(value)) {
+        const cleaned = value.map((item) => item.trim()).filter(Boolean);
+        return cleaned.length > 0 ? cleaned : fallback;
+    }
+    const trimmed = value.trim();
+    if (!trimmed) {
+        return fallback;
+    }
+    return [trimmed];
 }
 async function resolveCwd(dir) {
     const resolved = path.resolve(dir);
