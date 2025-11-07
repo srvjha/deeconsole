@@ -11,7 +11,7 @@ async function main() {
   try {
     await import(pathToFileURL(distEntry).href);
   } catch (error) {
-    console.error('[deconsole] Failed to load compiled CLI from dist/index.js');
+    console.error('[deeconsole] Failed to load compiled CLI from dist/index.js');
     console.error(error instanceof Error ? error.message : error);
     process.exitCode = 1;
   }

@@ -91,7 +91,7 @@ async function main(): Promise<void> {
   const version = await getPackageVersion();
 
   program
-    .name('deconsole')
+    .name('deeconsole')
     .description('Remove or comment console statements throughout your project files.')
     .version(version)
     .option('-c, --comment', 'Comment out console statements instead of deleting them', false)

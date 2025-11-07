@@ -1,11 +1,11 @@
 {
-  "name": "deconsole",
+  "name": "deeconsole",
   "version": "1.0.0",
   "description": "CLI to strip or comment console statements from project files",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "deconsole": "./dist/index.js"
+    "deeconsole": "./dist/index.js"
   },
   "scripts": {
     "build": "tsc --pretty",

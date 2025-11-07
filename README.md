@@ -1,4 +1,4 @@
-## deconsole
+## deeconsole
 
 Its a CLI utility for removing or commenting out `console.*` statements across JavaScript and TypeScript codebases. Designed to be published as an npm package, it supports glob-based file targeting, dry runs, backups, and optional comment-based preservation of log statements.
 
@@ -8,23 +8,23 @@ You can consume the package globally, as a dev dependency, or via `npx`:
 
 ```bash
 # Global install (recommended for recurring use)
-npm install --global deconsole
+npm install --global deeconsole
 
 # Project-level dev dependency
-npm install --save-dev deconsole
+npm install --save-dev deeconsole
 
 # On-demand without install
-npx deconsole --help
+npx deeconsole --help
 ```
 
-When installed globally or locally, the CLI executable is named `deconsole`.
+When installed globally or locally, the CLI executable is named `deeconsole`.
 
 ## Usage
 
 Run the command from the project root you want to scan. By default it searches for JavaScript and TypeScript files and removes all `console` statements.
 
 ```bash
-deconsole
+deeconsole
 ```
 
 ### Core Options
@@ -40,7 +40,7 @@ deconsole
 Display the full help with:
 
 ```bash
-deconsole --help
+deeconsole --help
 ```
 
 ## Examples
@@ -48,25 +48,25 @@ deconsole --help
 Remove console statements from the default set of source files:
 
 ```bash
-deconsole
+deeconsole
 ```
 
 Comment out every `console.*` call in a specific folder while keeping backups:
 
 ```bash
-deconsole --comment --backup --pattern "src/**/*.ts"
+deeconsole --comment --backup --pattern "src/**/*.ts"
 ```
 
 Preview changes without touching files:
 
 ```bash
-deconsole --dry-run --verbose
+deeconsole --dry-run --verbose
 ```
 
 Target only tests and ignore snapshot folders:
 
 ```bash
-deconsole \
+deeconsole \
   --pattern "tests/**/*.{ts,tsx}" \
   --ignore "**/__snapshots__/**"
 ```
@@ -90,9 +90,9 @@ After building, the compiled CLI lives in `dist/index.js` with the execute bit s
 
 ## Sample Workflow
 
-1. Install the package globally: `npm install --global deconsole`.
-2. Run `deconsole --dry-run` in your project root to see how many statements will be touched.
-3. Execute `deconsole --comment` to convert logs into comments for later review, or omit the flag to remove them outright.
+1. Install the package globally: `npm install --global deeconsole`.
+2. Run `deeconsole --dry-run` in your project root to see how many statements will be touched.
+3. Execute `deeconsole --comment` to convert logs into comments for later review, or omit the flag to remove them outright.
 4. Inspect `.bak` files if you enabled backups, then delete them when satisfied.
 
 ## License
