@@ -1,6 +1,6 @@
 {
   "name": "deeconsole",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI to strip or comment console statements from project files",
   "type": "module",
   "main": "dist/index.js",
