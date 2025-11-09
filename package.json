@@ -23,6 +23,13 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/srvjha/deconsole.git"
+  },
+   "bugs": {
+    "url": "https://github.com/srvjha/deconsole/issues"
+  },
   "dependencies": {
     "@babel/parser": "^7.26.3",
     "@babel/traverse": "^7.26.3",
